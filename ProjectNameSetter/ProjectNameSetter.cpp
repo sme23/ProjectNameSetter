@@ -31,23 +31,18 @@ int main() {
 
 	//aaand output it as our EA thing
 
-	cout << "#ifdef __DEBUG__" << endl;
-	cout << "MESSAGE \"FULL FILE PATH - " << workingDir << "\"" << endl;
-	cout << "#endif" << endl;
-
 	cout << "PUSH" << endl;
 	cout << "ORG $D74EC" << endl;
 	cout << "String(\"" << projName << "\")" << endl;
 	cout << "POP" << endl;
-
 
 }
 
 
 string getCurrentDir() {
 
-	char buff[256];
-	_getcwd(buff, 256);
+	char buff[1024];
+	_getcwd(buff, 1024);
 	string cwd(buff);
 	return cwd;
 
