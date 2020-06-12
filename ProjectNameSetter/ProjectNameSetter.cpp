@@ -26,23 +26,26 @@ int main() {
 
 	//noooow we run into a problem where, we only want the first 7 characters of this string
 	//so force the size to 7
-	projName.resize(7);
+	//projName.resize(7);
 	//if this is less than 7 you get null strings which should become terminators as text
 
 	//aaand output it as our EA thing
 
 	cout << "PUSH" << endl;
-	cout << "ORG $D74EC" << endl;
-	cout << "String(\"" << projName << "\")" << endl;
+	cout << "ORG $B30" << endl;
+	cout << "POIN NewProjectNameString" << endl;
 	cout << "POP" << endl;
-
+	cout << "NewProjectNameString:" << endl;
+	cout << "String(\"" << projName << "\")" << endl;
+	cout << "BYTE 0" << endl;
+	
 }
 
 
 string getCurrentDir() {
 
-	char buff[1024];
-	_getcwd(buff, 1024);
+	char buff[2048];
+	_getcwd(buff, 2048);
 	string cwd(buff);
 	return cwd;
 
