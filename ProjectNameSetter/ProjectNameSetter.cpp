@@ -38,6 +38,7 @@ int main() {
 	cout << "NewProjectNameString:" << endl;
 	cout << "String(\"" << projName << "\")" << endl;
 	cout << "BYTE 0" << endl;
+	cout << "ALIGN 4" << endl;
 	
 }
 
